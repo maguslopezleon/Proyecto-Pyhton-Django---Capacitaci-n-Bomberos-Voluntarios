@@ -1,0 +1,50 @@
+{% extends "aplicacion/index.html" %}
+{% block hero%}
+{% load static %}
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide 1 -->
+      <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-1.webp' %})"></div>
+      <!-- Slide 2 -->
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-2.webp' %})"></div>
+    </div>
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+  </div>
+</section><!-- End Hero -->
+{%endblock hero%}
+{% block intro %}
+<!-- ======= Intro Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h1>Agregar o Editar Profesor</h1>
+      </div>
+    </div>
+</section><!-- End Intro Section -->
+{% endblock intro %}
+{% block contenido %}
+<div style="display: flex; justify-content: center" class="cursoForm">
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <div style="display: flex; justify-content: center"><input style="background: #ffcc33;
+          border: 0;
+          font-weight: 600;
+          justify-content: center;
+          padding: 10px 20px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          border-radius: 4px;" type="submit" value="Guardar Profesor">
+        </div>
+    </form>
+</div>
+{% endblock contenido %}

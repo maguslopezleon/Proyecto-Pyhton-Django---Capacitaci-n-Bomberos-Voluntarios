@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+  <html lang="en-es">
+    <head>
+      {% load static %}
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>3era Pre Entrega López León - Python 50215</title>
+      <meta content="Sitio web oficial de los Bomberos Voluntarios de Vicente López 4795-2222 Av. Maipu 1669, Florida, Vicente López" name="description">
+      <meta content="bomberos, voluntarios, voluntariado, vicente lópez, florida, olivos, carapachay, villa adelina, la lucila, munro, vecinos" name="keywords">
+      <!-- Favicons -->
+      <link href=" {% static 'assets/img/favicon.png' %}" rel="icon">
+      <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      <!-- Vendor CSS Files -->
+      <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+      <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+      <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+      <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+      <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+      <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+      <!-- Template Main CSS File -->
+      <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+      <!-- Font Awesome-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    </head>
+    <body>
+      <!-- ======= Header ======= -->
+      <header id="header" class="fixed-top">
+        <div class="container d-flex  justify-content-between">
+          <a href="{% url 'home' %}" class="logo"><img src="{% static 'assets/img/escudo.png' %}" alt="" class="img-fluid"></a>
+          <nav id="navbar" class="navbar">
+            <ul>
+              {% if user.is_authenticated %}
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'cursos' %}">Cursos</a></li>
+                <li><a href="{% url 'cuerpo' %}">Cuerpo Activo</a></li>
+                <li><a href="{% url 'profesores' %}">Profesores</a></li>
+                <li><a href="{% url 'cartelera' %}">Cartelera</a></li>
+                <li><a href="{% url 'historia' %}">Nuestra historia</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'acerca' %}">Acerca de mi</a></li>
+                <li><a style="color:lightgreen">¡Hola {{user.username}}!</a></li> 
+                <li><a  href="{% url 'agregar_avatar' %}" ><img style="justify-content: center" src="{{ request.session.avatar }}" height="40px" weight="40px"/></a></li> 
+                <li style="margin-left: 10px"><a style="background: #003399;border: 0;padding: 10px 20px;transition: 0.4s;border-radius: 4px;" href="{% url 'perfil' %}">Perfil</a></li>
+                <li style="margin-left: 10px"><a style="background: #cc3333;border: 0;padding: 10px 20px;transition: 0.4s;border-radius: 4px;" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+              {% else %}
+                <li><a href="{% url 'historia' %}">Nuestra historia</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li style="margin-left: 10px"><a style="background: #003399;border: 0;padding: 10px 20px;transition: 0.4s;border-radius: 4px;" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                <li style="margin-left: 10px"><a style="background: #cc3333;border: 0;padding: 10px 20px;transition: 0.4s;border-radius: 4px;" href="{% url 'registrar' %}">Registrarse</a></li>
+              {% endif %}
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+        </div>
+      </header>
+      <!-- End Header -->
+      <!-- ======= Hero Section ======= -->
+      {% block hero%}
+      <section id="hero">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+          <div class="carousel-inner" role="listbox">
+            <!-- Slide 1 -->
+            <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-1.webp' %})"></div>
+            <!-- Slide 2 -->
+            <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-2.webp' %})"></div>
+          </div>
+          <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+          </a>
+          <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+          </a>
+        </div>
+      </section><!-- End Hero -->
+      {% endblock hero%}
+      <main id="main">
+      {% block intro %}
+        <!-- ======= Intro Section ======= -->
+        <section id="about" class="about">
+          <div class="container">
+            <div class="section-title">
+              <h1>Departamento de capacitación Bomberos Voluntarios Vicente López</h1>
+              <h5>¡Enterate de todas las novedades referidas a nuestra capacitación!</h5>
+            </div>
+          </div>
+        </section><!-- End Intro Section -->
+        {% endblock intro %}  
+        {% block contenido %}
+        <!-- ======= Servicios Section ======= -->
+        <section id="features" class="features"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><a href="{% url 'cursos' %}"><img class="icono-capacitacion" src="{% static 'assets/img/iconos/capacitaciones.png' %}" alt=""></a></div>
+                <h4 class="title"><a href="{% url 'cursos' %}">Cursos</a></h4>            
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><a href="{% url 'cuerpo' %}"><img class="icono-simulacro" src="{% static 'assets/img/iconos/bombero.png' %}" alt=""></a></div>
+                <h4 class="title"><a href="{% url 'cuerpo' %}">Cuerpo Activo</a></h4>            
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><a href="{% url 'profesores' %}"><img class="icono-viaje-de-agua" src="{% static 'assets/img/iconos/instructores.png' %}" alt=""></a></div>
+                <h4 class="title"><a href="{% url 'profesores' %}">Profesores</a></h4>         
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><a href="{% url 'cartelera' %}"><img class="icono-viaje-de-agua" src="{% static 'assets/img/iconos/novedades.png' %}" alt=""></a></div>
+                <h4 class="title"><a href="{% url 'cartelera' %}">Cartelera de novedades</a></h4>         
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><a href="{% url 'contacto' %}"><img class="icono-viaje-de-agua" src="{% static 'assets/img/iconos/contacto.png' %}" alt=""></a></div>
+                <h4 class="title"><a href="{% url 'contacto' %}">Contacto</a></h4>         
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><a href="{% url 'historia' %}"><img class="icono-viaje-de-agua" src="{% static 'assets/img/iconos/cuartel.png' %}" alt=""></a></div>
+                <h4 class="title"><a href="{% url 'historia' %}">Nuestra historia</a></h4>         
+              </div>         
+            </div>
+          </div>
+        </section><!-- End Servicios Section -->
+        <!-- ======= Intro Section ======= -->
+        <section id="about" class="about">   
+            <div class="section-title">
+              <h2>Fotos recientes</h2>        
+            </div>   
+        </section><!-- End Intro Section -->
+        <!-- ======= Recent Photos Section ======= -->   
+        <section id="recent-photos" class="recent-photos">
+          <div class="container">
+            <div class="recent-photos-slider swiper-container">
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide"><a href="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-10.png' %}" class="glightbox"><img src="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-10.png' %}" class="img-fluid" alt=""></a></div>
+                <div class="swiper-slide"><a href="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-11.png' %}" class="glightbox"><img src="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-11.png' %}" class="img-fluid" alt=""></a></div>
+                <div class="swiper-slide"><a href="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-12.png' %}" class="glightbox"><img src="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-12.png' %}" class="img-fluid" alt=""></a></div>
+                <div class="swiper-slide"><a href="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-13.png' %}" class="glightbox"><img src="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-13.png' %}" class="img-fluid" alt=""></a></div>
+                <div class="swiper-slide"><a href="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-14.png' %}" class="glightbox"><img src="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-14.png' %}" class="img-fluid" alt=""></a></div>
+                <div class="swiper-slide"><a href="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-15.png' %}" class="glightbox"><img src="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-15.png' %}" class="img-fluid" alt=""></a></div>
+                <div class="swiper-slide"><a href="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-16.png' %}" class="glightbox"><img src="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-16.png' %}" class="img-fluid" alt=""></a></div>
+                <div class="swiper-slide"><a href="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-17.png' %}" class="glightbox"><img src="{% static 'assets/img/novedades/aspirantes/galeria-aspirantes-17.png' %}" class="img-fluid" alt=""></a></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </section> 
+        <!-- End Recent Photos Section -->  
+        {% endblock contenido %}    
+      </main>
+      <!-- End #main -->
+      <!-- ======= Footer ======= -->
+      <footer id="footer">  
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Bomberos Voluntarios Vicente López</span></strong>. Todos los derechos reservados
+            <div class="social-links">     
+              <a target="_blank" href="https://www.facebook.com/profile.php?id=100064731274643" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a target="_blank" href="https://www.instagram.com/bomberosvicentelopez?igsh=MXE3djRyMWVyeGw3OQ==" class="instagram"><i class="bx bxl-instagram"></i></a>
+            </div> 
+            <div class="footer-padre">
+            <div class="footer-hijo footer-logo"><img src="{% static 'assets/img/logo-corto-18.png' %}"alt=""></div>
+            <div class="footer-hijo">
+              <ul class="footer-hijas">
+                {% if user.is_authenticated %}
+                  <li><a href="{% url 'home' %}">Inicio</a></li>
+                  <li><a href="{% url 'cursos' %}">Cursos</a></li>
+                  <li><a href="{% url 'cuerpo' %}">Cuerpo activo</a></li>
+                  <li><a href="{% url 'profesores' %}">Profesores</a></li>
+                  <li><a href="{% url 'cartelera' %}">Cartelera</a></li>
+                  <li><a href="{% url 'historia' %}">Nuestra historia</a></li>
+                  <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                  <li><a href="{% url 'acerca' %}">Acerca de mi</a></li>
+                {% else %}
+                  <li><a href="{% url 'historia' %}">Nuestra historia</a></li>
+                  <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                  {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer><!-- End Footer -->
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+      <!-- Vendor JS Files -->
+      <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+      <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+      <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+      <!-- Template Main JS File -->
+      <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+</html>

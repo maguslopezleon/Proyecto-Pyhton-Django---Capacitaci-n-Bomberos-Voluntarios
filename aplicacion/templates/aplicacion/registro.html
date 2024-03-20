@@ -1,0 +1,31 @@
+{% extends "aplicacion/index.html" %}
+{% block intro %}
+<!-- ======= Intro Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h1>Registrarse</h1>
+      </div>
+    </div>
+</section><!-- End Intro Section -->
+{% endblock intro %}
+{% block contenido %}
+<div style="display: flex; justify-content: center" class="cursoForm">    
+    <form action="" method="post">
+        {% csrf_token %}
+        <!-- Comentario  -->
+        <table>
+            {{ form.as_table }}
+        </table>
+        <div style="display: flex; justify-content: center"><input style="background: #ffcc33;
+            border: 0;
+            font-weight: 600;
+            justify-content: center;
+            padding: 10px 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;" type="submit" value="Enviar">
+        </div>
+    </form>
+</div>
+{% endblock contenido %}

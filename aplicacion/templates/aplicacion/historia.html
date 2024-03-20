@@ -1,0 +1,184 @@
+{% extends "aplicacion/index.html" %}
+{% block hero%}
+{% load static %}
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-4.webp' %})">
+      </div>
+  </div>
+</section>
+{%endblock hero%}
+{% block intro %}
+{% load static %}
+<!-- ======= Story Intro Section ======= -->
+<section id="story-intro" class="story-intro">
+    <div class="container">
+      <div class="section-title">
+        <h1>Nuestra historia</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="{% static 'assets/img/antiguas/historia-1.webp' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+          <h3>Los primeros tiempos</h3>
+          <p>
+            Anteriormente a la concreción de la entidad, el señor José Francisco Díaz y sus hijos
+              Enrique y Ricardo, junto a jóvenes de la zona, prestaban sus servicios por vocación.
+              <br><br> 
+              En una ocasión, al haberse producido un incendio en la calle A. Alsina y Av. Maipú, salieron
+              de la casa familiar de los Díaz, sita en José Mármol 2456, a combatirlo a bordo de un
+              precario carro tirado a caballo y contando con baldes de arena, picos y palas. 
+              <br><br>
+          </p>
+          <h3>Fundación</h3>
+          <p>
+            Posteriormente el señor Díaz, los hermanos Dulom y otros fundadores como Miguel
+            Muñoz y Restituto Ventura, entre otros, decidieron organizarse para cumplir mejor con
+            tan noble labor. Es así que los Dulom ofrecen su casa como sede inicial, a fin de evitar el
+            gasto de un alquiler y el 9 de septiembre de 1932 se constituye formalmente, la
+            sociedad de primeros auxilios y Bomberos Voluntarios de Vicente López, en el domicilio
+            del Sr. Osvaldo Edmundo Dulom, en la calle Las Heras 2457, Florida.
+          </p>
+        </div>
+      </div>
+    </div>
+</section><!-- End Story Intro Section -->
+{% endblock intro %}
+{% block contenido %}
+{% load static %}
+<!-- ======= Featured Members Section ======= -->
+<section id="featured-members" class="featured-members">
+    <div class="container">
+      <div class="row content">
+        <div class="col-lg-6">
+          <img src="{% static 'assets/img/antiguas/historia-2.webp' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-3 pt-lg-0">
+          <p>
+            La primera Honorable Comisión Directiva estuvo integrada por Antonio Dulom
+            (presidente), José francisco Díaz (vicepresidente), Alberto Holgado (secretario), Osvaldo
+            E. Dulom (pro secretario), Justino Torres (tesorero), Pedro M. Jacinto (pro tesorero),
+            Guarino C. Ceccotti, Juan A. Otero, Fernando Pettinari y Francisco Taycher(vocales).
+            <br><br>
+            No les resultaba fácil cobrar la cuota de $ 1.50 que habían establecido como pago, pero
+            a pesar de ello pudieron ir adquiriendo los recursos necesarios, y el entonces Intendente
+            Rubio, les obsequió la primer ambulancia tirada a caballos, lo que facilitaría el traslado de
+            enfermos o accidentados.
+          </p>
+          <h3>La casa propia</h3>
+          <p>Se alquiló un terreno en Las Heras y Ayacucho, en el que se construyó un cuarto de
+            ladrillos y madera, con techo a dos aguas, y a sus costados se instalaron dos vagones
+            de tren, sin su tren rodante, (donados por el ex Ferrocarril Central Córdoba). 
+            <br><br> 
+            Uno de los primeros vehículos adquiridos fue un camión Overland, adquirido en 1933. En ese mismo
+            año se tramitó y obtuvo de la Policía Federal la donación de ropa, calzado y correajes en
+            desuso para uniformar a los vecinos, ya que sus primeras ropas de trabajo habían sido
+            costeadas por cada uno de ellos.
+        </div>
+      </div>
+    </div>
+  </section><!-- End Featured Members Section -->
+  <!-- ======= Gallery Section ======= -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">          
+        </div>
+      </div>
+      <div class="row gallery-container">
+        <div class="col-lg-4 col-md-6 gallery-item filter-home">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-1.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-1.webp' %}" class="glightbox" ><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-item filter-vacation">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-2.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-2.webp' %}" class="glightbox"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-item filter-home">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-3.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-3.webp' %}" class="glightbox"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-item filter-beach">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-4.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-4.webp' %}" class="glightbox"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-item filter-vacation">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-5.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-5.webp' %}" class="glightbox"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-item filter-home">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-6.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-6.webp' %}" class="glightbox"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-item filter-beach">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-7.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-7.webp' %}" class="glightbox"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-item filter-beach">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-8.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-8.webp' %}" class="glightbox"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-item filter-vacation">
+          <div class="gallery-wrap">
+            <img src="{% static 'assets/img/antiguas/galeria/antiguas-galeria-9.webp' %}" class="img-fluid" alt="">
+            <div class="gallery-info">
+              <div class="gallery-links">
+                <a href="{% static 'assets/img/antiguas/galeria/antiguas-galeria-9.webp' %}" class="glightbox" ><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Gallery Section -->
+{% endblock contenido %}

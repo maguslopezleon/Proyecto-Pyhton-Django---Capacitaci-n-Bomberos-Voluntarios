@@ -1,0 +1,33 @@
+{% extends "aplicacion/index.html" %}
+{% block hero%}
+{%endblock hero%}
+{% block intro %}
+<!-- ======= Intro Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h1>Eliminar Profesores</h1>
+        <h5>Asociación de Bomberos Voluntarios y Primeros Auxilios de Vicente López</h5>
+      </div>
+    </div>
+</section><!-- End Intro Section -->
+{% endblock intro %}
+{% block contenido %}
+<form action="" method="POST">
+    {% csrf_token %}   
+    <div style="margin-top:100px; margin-bottom:40px" class="text-center">     
+        <h3>¿Esta seguro de eliminar al instructor? <p style="color:red">{{ object }}</p> </h3>
+    </div>
+    <div class="text-center">
+      <div style="display: flex; justify-content: center"><input style="background: #ffcc33;
+      border: 0;
+      font-weight: 600;
+      justify-content: center;
+      padding: 10px 20px;
+      margin-top: 20px;
+      margin-bottom: 150px;
+      border-radius: 4px;" type="submit" value="Confirmar">
+      </div>
+    </div>
+</form>
+{% endblock contenido %}

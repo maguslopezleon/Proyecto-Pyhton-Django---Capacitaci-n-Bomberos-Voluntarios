@@ -1,0 +1,83 @@
+{% extends "aplicacion/index.html" %}
+{% block hero%}
+{% load static %}
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide 1 -->
+      <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-3.webp' %})"></div>
+      <!-- Slide 2 -->
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-2.webp' %})"></div>
+    </div>
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+  </div>
+</section><!-- End Hero -->
+{%endblock hero%}
+{% block intro %}
+<!-- ======= Intro Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h1>Cursos</h1>
+        <h5>Asociación de Bomberos Voluntarios y Primeros Auxilios de Vicente López</h5>
+    </div>     
+    </div><div class="boton-novedades"><a href="{% url 'buscar_curso' %}" style="font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 5px;
+      transition: 0.3s;
+      line-height: 1;
+      color: #cc3333;
+      -webkit-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+      margin-top: 6px;
+      border: 2px solid #cc3333;">Buscar curso</a></div>
+    </div>
+</section><!-- End Intro Section -->
+{% endblock intro %}
+{% block contenido %}
+<div style="display: flex; justify-content: center; align-items:center; margin:10px">
+  <a style="margin: 10px" href="{% url 'curso_create' %}" class="btn btn-primary btn-sm"><i class="fa fa-plus fa-lg" title="Crear"></i></a>
+  <a style="margin: 5px; font-weight: 500; font-size: 18px" href="{% url 'curso_create' %}">Crear Curso </a>
+</div>
+<div style="display: flex; margin-top:50px">
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+            <th>Nombre de curso</th>
+            <th>Tipo</th>
+            <th>Mes</th>
+            <th>Año</th>
+            <th>Acciones</th>
+          </tr>
+      </thead>
+    <tbody>
+    {% for c in cursos %}
+      <tr>
+          <td>{{ c.id }}</td>
+          <td>{{ c.nombre }}</td>
+          <td>{{ c.tipo }}</td>
+          <td>{{ c.mes }}</td>
+          <td>{{ c.anio }}</td>
+          <td>
+              <a href="{% url 'curso_update' c.id %}" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              <i class="fa fa-edit fa-sm" title="Edit Record"></i></a>
+              <a href="{% url 'curso_delete' c.id %}" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              <i class="fa fa-trash fa-sm" title="Delete Record"></i></a>                
+          </td>  
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock contenido %}

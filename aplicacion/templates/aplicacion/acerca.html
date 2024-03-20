@@ -1,0 +1,51 @@
+{% extends "aplicacion/index.html" %}
+<!-- ======= Hero Section ======= -->
+{% block hero%}
+{% load static %}
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-14.webp' %})"></div>
+    </div>
+  </div>  
+</section>
+{%endblock hero%}
+{% block intro %}
+{% load static %}
+<!-- ======= Intro Section ======= -->
+<section id="about" class="about">
+  <div class="container"></div>
+</section><!-- End Intro Section -->
+{% endblock intro %}
+{% block contenido %}
+ <!-- ======= My & Family Section ======= -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="row content">
+      <div class="col-lg-6">
+        <img src="{% static 'assets/img/perfil_lopez_leon_maria_agustina.png' %}" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0">
+        <h2>¡Hola! Soy Agus</h2>
+        <p>         
+           Mi nombre completo es María Agustina López León pero prefiero el "Agus" o "Tita", para los amigos. 
+           <br><br> Tengo 32 años y soy estudiante de
+           la Licenciatura en Gerencia de Empresas. Me fascina el mundo del análisis de datos, es por eso que decidí hacer este curso de Python en Coder.
+           Estoy anotada en la carrera de Data, así que esto recién empieza. 
+           <br><br>
+           Actualmente trabajo en una empresa de electrodomésticos, pero me gustaría poder cambiar al rubro de la data pronto. 
+           <br><br>
+           Además de data ñoña soy bombera voluntaria en el cuartel de Vicente López, Buenos Aires. Es por eso que decidí crear este sistema para
+           que el departamento de capacitación pueda gestionar sus novedades y llevar un control de los cursos que toma el personal del cuerpo activo.
+           <br><br>
+           Por cualquier cosa dejo mi contacto: agus.lopezleon@gmail.com
+           <br><br>
+           Pd: Gracias Rami y Norman por la paciencia y el acompañamiento durante el curso :)
+           <br><br>
+        </p>
+        <a href="https://www.linkedin.com/in/agustinalopezleon/" class="btn-learn-more">Perfil de linkedin</a>
+      </div>
+    </div>
+  </div>
+</section><!-- End My & Family Section -->
+{% endblock contenido %}

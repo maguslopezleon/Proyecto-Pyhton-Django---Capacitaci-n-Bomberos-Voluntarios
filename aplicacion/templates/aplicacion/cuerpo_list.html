@@ -1,0 +1,66 @@
+{% extends "aplicacion/index.html" %}
+{% block hero%}
+{% load static %}
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-11.webp' %})"></div>
+  </div>
+</section>
+{%endblock hero%}
+{% block intro %}
+<!-- ======= Intro Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h1>Cuerpo Activo</h1>
+        <h5>Asociación de Bomberos Voluntarios y Primeros Auxilios de Vicente López</h5>
+      </div>
+    </div>
+  </section><!-- End Intro Section -->
+{% endblock intro %}
+{% block contenido %}
+<div style="display: flex; justify-content: center; align-items:center; margin:10px">
+  <a style="margin: 10px" href="{% url 'cuerpo_create' %}" class="btn btn-primary btn-sm"><i class="fa fa-plus fa-lg" title="Crear"></i></a>
+  <a style="margin: 5px; font-weight: 500; font-size: 18px" href="{% url 'cuerpo_create' %}">Crear Integrante del Cuerpo Activo </a>
+</div>
+<div style="display: flex; margin-top:50px">
+    <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Jerarquia</th>
+              <th>Email</th>
+              <th>Legajo</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+      {% for b in cuerpo_list %}
+          <tr>
+              <td>{{ b.nombre }}</td>
+              <td>{{ b.apellido }}</td>
+              <td>{{ b.jerarquia }}</td>
+              <td>{{ b.email }}</td>
+              <td>{{ b.legajo }}</td>
+              <td>
+                <a
+                  href="{% url 'cuerpo_update' b.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'cuerpo_delete' b.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>            
+          </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock contenido %}
