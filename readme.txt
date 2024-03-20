@@ -42,7 +42,7 @@ Los usuarios registrados pueden:
 
 ####################################################################################
 Pruebas Realizadas
-Ver el archivo "Unit Test - Sistema de Gestión Depto de Capacitación Bomberos Vicente López" dentro de este mismo repositorio
+Ver el archivo "Casos_de_Test.xls" dentro de este mismo repositorio
 
 
 Usuarios para Pruebas:
